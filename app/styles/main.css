@@ -430,7 +430,7 @@ body {
   clear: both; }
 
 /* Mediaquery for iphone and ipads width's */
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   /* Force table to not be like tables anymore */
   table.reflow {
     display: block; }
@@ -455,15 +455,20 @@ body {
     position: relative;
     padding-left: 50%; }
 
+  .reflow td[colspan='2'] {
+    min-height: 44px; }
+  .reflow td[colspan='3'] {
+    min-height: 66px; }
+  .reflow td[colspan='4'] {
+    min-height: 88px; }
+
   .th-injected {
     /* Now like a table header */
     position: absolute;
     /* Top/left values mimic padding */
     left: 6px;
     width: 45%;
-    padding-right: 10px;
-    white-space: pre;
-    content: attr(data-polis); }
+    padding-right: 10px; }
 
   /*
   Label the data

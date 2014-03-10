@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
 		polisName = '',
 		polisNames = [];
 
-		// If table thead th's found set a data-attribute for each td with a polisName
+		// If table thead th's found set a data-attribute for each td with a polis name
 		// from thead.
 		if ( !tableTheadThs ) { return; }
 
@@ -27,31 +27,60 @@ jQuery(document).ready(function($) {
 
 	// Set each td content
 	toggleTdSpan = function ( tbodyTrs, nodeContent ) {
-		var i, j, length,
+		var i, j, k, iLen, jLen, kLen,
 		trChild,
 		tdNum,
-		thInjected;
+		colNum,
+		thInjected,
+		thInjectedContent;
 
 		// Set optional nodeContent
 		nodeContent = (typeof nodeContent === 'undefined') ? false : nodeContent;
 
-		// Iterate over each tr
-		for (i = 0, length = tbodyTrs.length; i < length; i++) {
+		// Iterate over each tbody > tr
+		for (i = 0, iLen = tbodyTrs.length; i < iLen; i++) {
 			tdNum = 0;
 
-			// Iterate over each td in tr
-			for (j = 0, length = tbodyTrs[i].children.length; j < length; j++) {
+			// Iterate over each td in tbody > tr
+			for (j = 0, jLen = tbodyTrs[i].children.length; j < jLen; j++) {
 				trChild = tbodyTrs[i].children[j];
 
-				// Only td's go through
+				// Only td's will be processed
 				if ( trChild.tagName !== 'TH' ) {
 					thInjected = $(trChild).find('.th-injected');
 
-					// Add or remove div in td (with thead th content)
+					// If tbody > td has a colspan attr, set multiple thead > th's in
+					// tbody > td based on colspan number.
+					if ( trChild.hasAttribute('colspan') ) {
+
+						thInjectedContent = '';
+
+						// Get value of colspan
+						colNum = trChild.getAttribute('colspan');
+						console.log(colNum);
+
+						// Iterate over each col number and append thead > td's content
+						// to current tbody > td
+						for ( k = 0, kLen = colNum; k < kLen; k++ ) {
+
+							// Append thInjectedContent
+							thInjectedContent += '<div>' + nodeContent[ (j - 1) + k ] + '</div>';
+
+						}
+					// If td has no colspan attr, append only one thead's > td content to
+					// the injected div (.th-injected).
+					} else {
+						thInjectedContent = nodeContent[ tdNum ];
+					}
+
+					// If nodeContent argument is passed with function, add div .th-injected in td
+					// which include thead > th content).
 					if ( nodeContent && thInjected.length === 0 ) {
 						trChild.innerHTML = '<div aria-hidden="true" class="th-injected">' +
-							nodeContent[ tdNum ] + '</div>' + trChild.innerHTML;
-					} else if ( thInjected.length !== 0 ) {
+							thInjectedContent + '</div>' + trChild.innerHTML;
+					}
+					// Else remove injected div element if exists
+					else if ( thInjected.length !== 0 ) {
 						trChild.removeChild( thInjected[0] );
 					}
 
@@ -61,14 +90,10 @@ jQuery(document).ready(function($) {
 		}
 	},
 
-	i, length,
 	table = $('.table.reflow'),
 	tbodyTrs = table.find('> tbody > tr'),
-	tdWithColspan = table.find('td[colspan]'),
-	curTdWithColspan,
-	colspanNum,
 	theadThsContent = getTheadThContent( table ),
-	mediaQueryBreakpoint = '767px',
+	mediaQueryBreakpoint = '991px', // $screen-xs-max = 767px | $screen-sm-max = 991px
 	mediaQueryIsSet = false;
 
 	// Initiate table reflow when media query breakpoint is reached
@@ -102,28 +127,4 @@ jQuery(document).ready(function($) {
 			mediaQueryIsSet = false;
 		}
 	});
-
-
-
-
-
-
-
-	// Set for each td a data-polis attr
-	// for (i = 0, length = td.length; i < length; i++) {
-	// 	$(td).attr('data-polis', '')
-	// }
-
-	// Iterate over each td that has a colspan attribute set
-	for (i = 0, length = tdWithColspan.length; i < length; i++) {
-		curTdWithColspan = $(tdWithColspan[i]);
-
-		// Get colspan number
-		colspanNum = curTdWithColspan.prop('colspan');
-
-
-		// Set height on td
-
-		// Set content on td:before
-	}
 });

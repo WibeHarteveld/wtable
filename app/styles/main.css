@@ -423,21 +423,21 @@ body {
   .marketing p + h4 {
     margin-top: 28px; }
 
-/*
-Max width before this PARTICULAR table gets nasty
-This query will take effect for any screen smaller than 760px
-and also iPads specifically.
-*/
-@media (max-width: 991px) {
-  .clearfix:before, .clearfix:after {
-    content: " ";
-    display: table; }
-  .clearfix:after {
-    clear: both; }
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table; }
+.clearfix:after {
+  clear: both; }
 
+/* Mediaquery for iphone and ipads width's */
+@media (max-width: 767px) {
   /* Force table to not be like tables anymore */
-  table, thead, tbody, th, td, tr {
+  table.reflow {
     display: block; }
+    table.reflow > thead,
+    table.reflow > tbody,
+    table.reflow th, table.reflow td, table.reflow tr {
+      display: block; }
 
   /* Hide table headers (but not display: none;, for accessibility) */
   thead tr {
@@ -455,7 +455,7 @@ and also iPads specifically.
     position: relative;
     padding-left: 50%; }
 
-  td:before {
+  .th-injected {
     /* Now like a table header */
     position: absolute;
     /* Top/left values mimic padding */
@@ -463,8 +463,10 @@ and also iPads specifically.
     width: 45%;
     padding-right: 10px;
     white-space: pre;
-    content: "attr(data-polis)"; }
+    content: attr(data-polis); }
 
   /*
   Label the data
   */ }
+
+/*# sourceMappingURL=main.css.map */

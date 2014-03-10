@@ -69,33 +69,24 @@ body {
 	}
 }
 
+.clearfix {
+	@include clearfix();
+}
 
 
-
-
-
-/*
-Max width before this PARTICULAR table gets nasty
-This query will take effect for any screen smaller than 760px
-and also iPads specifically.
-*/
-@media (max-width: $screen-sm-max) {
-
-	.clearfix {
-		@include clearfix();
-	}
+/* Mediaquery for iphone and ipads width's */
+@media (max-width: $screen-xs-max) {
 
 	/* Force table to not be like tables anymore */
-	table, thead, tbody, th, td, tr {
+	table.reflow {
 		display: block;
-	}
 
-	// .table > thead > tr > th,
-	// .table > thead > tr > td,
-	// .table > tbody > tr > th,
-	// .table > tbody > tr > td,
-	// .table > tfoot > tr > th,
-	// .table > tfoot > tr > td
+		> thead,
+		> tbody,
+		th, td, tr {
+			display: block;
+		}
+	}
 
 	/* Hide table headers (but not display: none;, for accessibility) */
 	thead tr {
@@ -114,7 +105,7 @@ and also iPads specifically.
 		padding-left: 50%;
 	}
 
-	td:before {
+	.th-injected {
 		/* Now like a table header */
 		position: absolute;
 		/* Top/left values mimic padding */
@@ -126,10 +117,21 @@ and also iPads specifically.
 		content: attr(data-polis);
 	}
 
+	// td:before {
+	// 	/* Now like a table header */
+	// 	position: absolute;
+	// 	/* Top/left values mimic padding */
+	// 	// top: 6px;
+	// 	left: 6px;
+	// 	width: 45%;
+	// 	padding-right: 10px;
+	// 	white-space: pre;
+	// 	content: attr(data-polis);
+	// }
+
 	/*
 	Label the data
 	*/
-
 
 	// td:nth-of-type(1):before { content: "First Name"; }
 	// td:nth-of-type(2):before { content: "Last Name"; }

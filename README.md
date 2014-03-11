@@ -1,6 +1,7 @@
 # jquery.wtable
 
 ### For Max
+The explanation of the script is located in app/uitleg.docx
 To test the script with app/index.html, see below. Enjoy!
 
 ### Installing packages and dependencies for example

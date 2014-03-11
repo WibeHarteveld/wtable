@@ -6,12 +6,6 @@ $icon-font-path: "../bower_components/twbs-bootstrap-sass/vendor/assets/fonts/";
 @import "../bower_components/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/normalize";
 @import "../bower_components/twbs-bootstrap-sass/vendor/assets/stylesheets/bootstrap/tables";
 
-.browsehappy {
-	margin: 0.2em 0;
-	background: #ccc;
-	color: #000;
-	padding: 0.2em 0;
-}
 
 /* Space out content a bit */
 body {
@@ -27,54 +21,16 @@ body {
 	padding-right: 15px;
 }
 
-/* Custom page header */
-.header {
-	border-bottom: 1px solid #e5e5e5;
-
-	/* Make the masthead heading the same height as the navigation */
-	h3 {
-		margin-top: 0;
-		margin-bottom: 0;
-		line-height: 40px;
-		padding-bottom: 19px;
-	}
-}
-
-/* Custom page footer */
 .footer {
 	padding-top: 19px;
 	color: #777;
 	border-top: 1px solid #e5e5e5;
 }
 
-.container-narrow > hr {
-	margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-	text-align: center;
-	border-bottom: 1px solid #e5e5e5;
-	.btn {
-		font-size: 21px;
-		padding: 14px 24px;
-	}
-}
-
-/* Supporting marketing content */
-.marketing {
-	margin: 40px 0;
-	p + h4 {
-		margin-top: 28px;
-	}
-}
-
-.clearfix {
-	@include clearfix();
-}
-
-
-/* Mediaquery for iphone and ipads width's */
+/* --------------------------------------
+Styles for responsive table
+--------------------------------------- */
+/* Use your own media query. Make sure you also set this mediaquery for jquery.wtable.js */
 @media (max-width: $screen-sm-max) {
 
 	/* Force table to not be like tables anymore */
@@ -86,27 +42,17 @@ body {
 		th, td, tr {
 			display: block;
 		}
-	}
 
-	/* Hide table headers (but not display: none;, for accessibility) */
-	thead > tr,
-	tbody > tr.extra {
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
+		/* Hide table headers (but not display: none; for accessibility) */
+		> thead > tr,
+		> tbody > tr.extra {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
 
-	tr { border: 1px solid #ccc; }
+		tr { border: 1px solid #ccc; }
 
-	.table > tbody > tr > td {
-		/* Behave  like a "row" */
-		border: none;
-		border-bottom: 1px solid #eee;
-		position: relative;
-		padding-left: 50%;
-	}
-
-	.reflow {
 		td[colspan='2'] {
 			min-height: 44px;
 		}
@@ -116,12 +62,21 @@ body {
 		td[colspan='4'] {
 			min-height: 88px;
 		}
+
+		> tbody > tr > td {
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+			padding-left: 50%;
+		}
 	}
 
-
+/* -------------------------------------------------
+- Integration form 1: CSS3 with jquery.wtable script
+--------------------------------------------------*/
 
 	.th-injected {
-		/* Now like a table header */
 		position: absolute;
 		/* Top/left values mimic padding */
 		// top: 6px;
@@ -131,8 +86,11 @@ body {
 		white-space: nowrap;
 	}
 
+/* -------------------------------------------------------------------------
+- Integration form 2 (incomplete!!): CSS3 only (no jquery.wtable nessessary)
+---------------------------------------------------------------------------*/
+
 	// td:before {
-	// 	/* Now like a table header */
 	// 	position: absolute;
 	// 	/* Top/left values mimic padding */
 	// 	// top: 6px;
@@ -140,21 +98,23 @@ body {
 	// 	width: 45%;
 	// 	padding-right: 10px;
 	// 	white-space: pre;
-	// 	content: attr(data-polis);
 	// }
 
-	/*
-	Label the data
-	*/
+	// /*
+	// Label the data
+	// */
 
-	// td:nth-of-type(1):before { content: "First Name"; }
-	// td:nth-of-type(2):before { content: "Last Name"; }
-	// td:nth-of-type(3):before { content: "Job Title"; }
-	// td:nth-of-type(4):before { content: "Favorite Color"; }
-	// td:nth-of-type(5):before { content: "Wars of Trek?"; }
-	// td:nth-of-type(6):before { content: "Porn Name"; }
-	// td:nth-of-type(7):before { content: "Date of Birth"; }
-	// td:nth-of-type(8):before { content: "Dream Vacation City"; }
-	// td:nth-of-type(9):before { content: "GPA"; }
-	// td:nth-of-type(10):before { content: "Arbitrary Data"; }
+	// td:nth-of-type(1):before { content: "Polis 1"; }
+	// td:nth-of-type(2):before { content: "Polis *"; }
+	// td:nth-of-type(3):before { content: "Polis **"; }
+	// td:nth-of-type(4):before { content: "Polis ***"; }
+	// td:nth-of-type(5):before { content: "Polis ****"; }
+
+	// tr.extra {
+	// 	td:nth-of-type(2):before { content: "Beter Af Plus Tandarts *"; }
+	// 	td:nth-of-type(3):before { content: "Beter Af Plus Tandarts **"; }
+	// 	td:nth-of-type(4):before { content: "Beter Af Plus Tandarts ***"; }
+	// 	td:nth-of-type(5):before { content: "Beter Af Plus Tandarts ****"; }
+	// }
+
 }

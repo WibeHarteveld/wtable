@@ -372,12 +372,6 @@ table th[class*="col-"] {
       .table-responsive > .table-bordered > tfoot > tr:last-child > th,
       .table-responsive > .table-bordered > tfoot > tr:last-child > td {
         border-bottom: 0; } }
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0; }
-
 /* Space out content a bit */
 body {
   padding-top: 20px;
@@ -390,81 +384,48 @@ body {
   padding-left: 15px;
   padding-right: 15px; }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  /* Make the masthead heading the same height as the navigation */ }
-  .header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px; }
-
-/* Custom page footer */
 .footer {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5; }
 
-.container-narrow > hr {
-  margin: 30px 0; }
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5; }
-  .jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px; }
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0; }
-  .marketing p + h4 {
-    margin-top: 28px; }
-
-.clearfix:before, .clearfix:after {
-  content: " ";
-  display: table; }
-.clearfix:after {
-  clear: both; }
-
-/* Mediaquery for iphone and ipads width's */
+/* --------------------------------------
+Styles for responsive table
+--------------------------------------- */
+/* Use your own media query. Make sure you also set this mediaquery for jquery.wtable.js */
 @media (max-width: 991px) {
   /* Force table to not be like tables anymore */
   table.reflow {
-    display: block; }
+    display: block;
+    /* Hide table headers (but not display: none; for accessibility) */ }
     table.reflow > thead,
     table.reflow > tbody,
     table.reflow th, table.reflow td, table.reflow tr {
       display: block; }
+    table.reflow > thead > tr,
+    table.reflow > tbody > tr.extra {
+      position: absolute;
+      top: -9999px;
+      left: -9999px; }
+    table.reflow tr {
+      border: 1px solid #ccc; }
+    table.reflow td[colspan='2'] {
+      min-height: 44px; }
+    table.reflow td[colspan='3'] {
+      min-height: 66px; }
+    table.reflow td[colspan='4'] {
+      min-height: 88px; }
+    table.reflow > tbody > tr > td {
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50%; }
 
-  /* Hide table headers (but not display: none;, for accessibility) */
-  thead > tr,
-  tbody > tr.extra {
-    position: absolute;
-    top: -9999px;
-    left: -9999px; }
-
-  tr {
-    border: 1px solid #ccc; }
-
-  .table > tbody > tr > td {
-    /* Behave  like a "row" */
-    border: none;
-    border-bottom: 1px solid #eee;
-    position: relative;
-    padding-left: 50%; }
-
-  .reflow td[colspan='2'] {
-    min-height: 44px; }
-  .reflow td[colspan='3'] {
-    min-height: 66px; }
-  .reflow td[colspan='4'] {
-    min-height: 88px; }
-
+  /* -------------------------------------------------
+  - Integration form 1: CSS3 with jquery.wtable script
+  --------------------------------------------------*/
   .th-injected {
-    /* Now like a table header */
     position: absolute;
     /* Top/left values mimic padding */
     left: 6px;
@@ -472,8 +433,8 @@ body {
     padding-right: 10px;
     white-space: nowrap; }
 
-  /*
-  Label the data
-  */ }
+  /* -------------------------------------------------------------------------
+  - Integration form 2 (incomplete!!): CSS3 only (no jquery.wtable nessessary)
+  ---------------------------------------------------------------------------*/ }
 
 /*# sourceMappingURL=main.css.map */

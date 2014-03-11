@@ -1,5 +1,5 @@
 {
-	"name": "my-project",
+	"name": "wtable",
 	"private": true,
 	"dependencies": {
 		"jquery": "~1.11.0",

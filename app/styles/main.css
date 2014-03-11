@@ -418,6 +418,14 @@ Styles for responsive table
       min-height: 66px; }
     table.reflow td[colspan='4'] {
       min-height: 88px; }
+    table.reflow .extra ~ tr > td {
+      min-height: 44px; }
+    table.reflow .extra ~ tr > .td[colspan='2'] {
+      min-height: 88px; }
+    table.reflow .extra ~ tr > td[colspan='3'] {
+      min-height: 132px; }
+    table.reflow .extra ~ tr > td[colspan='4'] {
+      min-height: 176px; }
     table.reflow > tbody > tr > td {
       /* Behave  like a "row" */
       border: none;

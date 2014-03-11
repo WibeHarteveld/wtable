@@ -60,11 +60,33 @@ Styles for responsive table
 		td[colspan='2'] {
 			min-height: 44px;
 		}
+
 		td[colspan='3'] {
 			min-height: 66px;
 		}
+
 		td[colspan='4'] {
 			min-height: 88px;
+		}
+
+		.extra {
+			~ tr {
+				> td {
+					min-height: 44px;
+				}
+
+				> .td[colspan='2'] {
+					min-height: 88px;
+				}
+
+				> td[colspan='3'] {
+					min-height: 132px;
+				}
+
+				> td[colspan='4'] {
+					min-height: 176px;
+				}
+			}
 		}
 
 		> tbody > tr > td {

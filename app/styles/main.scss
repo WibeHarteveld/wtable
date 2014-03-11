@@ -89,7 +89,8 @@ body {
 	}
 
 	/* Hide table headers (but not display: none;, for accessibility) */
-	thead tr {
+	thead > tr,
+	tbody > tr.extra {
 		position: absolute;
 		top: -9999px;
 		left: -9999px;
@@ -127,6 +128,7 @@ body {
 		left: 6px;
 		width: 45%;
 		padding-right: 10px;
+		white-space: nowrap;
 	}
 
 	// td:before {

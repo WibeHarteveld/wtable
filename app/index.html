@@ -9,38 +9,18 @@
 	<title>Responsive Table</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<!-- build:css styles/vendor.css -->
-	<!-- bower:css -->
-	<!-- endbower -->
-	<!-- endbuild -->
-	<!-- build:css(.tmp) styles/main.css -->
+
 	<link rel="stylesheet" href="styles/main.css">
-	<!-- endbuild -->
+
 	<script src="bower_components/modernizr/modernizr.js"></script>
 </head>
 <body>
-	<!--[if lt IE 10]>
-	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
-	<div class="container">
-		<div class="header">
-			<ul class="nav nav-pills pull-right">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-			<h3 class="text-muted">yo_html5_boilerplate</h3>
-		</div>
-		<div class="jumbotron">
-			<h1>'Allo, 'Allo!</h1>
-			<p class="lead">Always a pleasure scaffolding your apps.</p>
-			<p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
-		</div>
-		<div class="row marketing">
-			<div class="col-lg-6">
 
-				<h1>Table original cleaned</h1>
+	<div class="container">
+		<div class="row marketing">
+			<div>
+
+				<h1>Responsive Table</h1>
 
 				<table class="table reflow table-bordered table-striped">
 					<thead>
@@ -92,120 +72,35 @@
 							<td>&nbsp;</td>
 							<td colspan="4">Alleen vergoeding vanuit bepaalde collectiviteiten</td>
 						</tr>
-					</tbody>
-				</table>
-
-				<h2>Reflowed table</h2>
-				<div id="reflowed"></div>
-
-
-				<h2>Normal table</h2>
-				<!-- Normal Table -->
-
-				<!-- <table cellspacing="0" cellpadding="0" class="table table-bordered table-striped" border="0" style="border-collapse:collapse;">
-					<thead>
-						<tr>
+						<tr class="extra">
 							<th></th>
-							<th>Beter Af Polis</th>
-							<th>Beter Af Plus<span class="stars stars1"></span></th>
-							<th>Beter Af Plus<span class="stars stars2"></span></th>
-							<th>Beter Af Plus<span class="stars stars3"></span></th>
-							<th>Beter Af Plus<span class="stars stars4"></span></th>
+							<th></th>
+							<th>Beter Af Plus Tandarts<span class="stars stars1">*</span></th>
+							<th>Beter Af Plus Tandarts<span class="stars stars2">**</span></th>
+							<th>Beter Af Plus Tandarts<span class="stars stars3">***</span></th>
+							<th>Beter Af Plus Tandarts<span class="stars stars4">****</span></th>
 						</tr>
-					</thead>
-
-					<tbody>
 						<tr>
 							<th>
-								<div class="ExternalClass72245201D9824D12B6C68D361A72991A">
-									<div>Één aandoening die niet op de door minister van VWS vastgestelde
-										lijst staat (<a href="/consumenten/vergoedingen/Pages/fysiotherapie-uitleg-en-voorbeelden.aspx">extra uitleg</a>),
-										maximaal per persoon per <span class="tooltip-toggle" data-html="true" data-original-title="&lt;p&gt;Een kalenderjaar (1 januari tot en met 31 december).&lt;/p&gt;" data-triggerdata-placement="top" title="">jaar</span>.
-										Uw arts en/of fysiotherapeut stelt de aandoening vast.
-									</div>
-								</div>
-							</th>
-								<td colspan="1" rowspan="1"><div>Alleen vergoeding vanuit de aanvullende verzekering</div></td>
-								<td colspan="1" rowspan="1"><div>6 per jaar</div></td>
-								<td colspan="1" rowspan="1"><div>12 per jaar</div></td>
-								<td colspan="1" rowspan="1"><div>27 per jaar</div></td>
-								<td colspan="1" rowspan="1">
-									<div>Alle behandelingen vergoed, waarvan maximaal 27 per jaar bij
-										<span class="tooltip-toggle" data-html="true" data-original-title="Aanbieders van zorg zoals huisartsen, specialisten en overig medisch personeel dat beroepshalve medische handelingen verricht. Daarnaast ook instellingen als ziekenhuizen, verzorgingshuizen en apotheken." data-triggerdata-placement="top" title="">zorgverlener</span>
-										waarmee wij geen <span class="tooltip-toggle" data-html="true" data-original-title="&lt;span&gt;Wij hebben met een groot aantal zorgverleners afspraken gemaakt. Hen noemen wij ook wel ‘gecontracteerde zorgverleners’.&lt;/span&gt;" data-triggerdata-placement="top" title="">afspraken</span>
-										hebben gemaakt (geldt voor chronische en niet-chronische aandoeningen tezamen)
-									</div>
-								</td>
-						</tr>
-
-						<tr>
-							<th>
-								<div class="ExternalClass3FCC86F5CA824E449C09043380BF8E01">
-									<div>Éen aandoening op de door de minister van VWS vastgestelde lijst (<a href="/consumenten/vergoedingen/Pages/fysiotherapie-uitleg-en-voorbeelden.aspx">extra uitleg</a>).
-										Uw arts en/of fysiotherapeut stelt de aandoening vast
-									</div>
-								</div>
-							</th>
-							<td colspan="1" rowspan="1">
-								<div>1 t/m 20 betaalt u zelf</div>
-								<div>Vanaf 21e behandeling vergoed (u betaalt dan wel <span class="tooltip-toggle" data-html="true" data-original-title="Elke verzekerde van 18 jaar of ouder betaalt jaarlijks een verplicht eigen risico voor de eerste medische kosten die hij of zij uit de basisverzekering maakt. Er zijn een paar uitzonderingen, zoals een huisartsbezoek." data-triggerdata-placement="top" title="">eigen risico</span> voor de vergoeding)</div>
-							</td>
-							<td colspan="1" rowspan="1">
-								<div>1 t/m 6 vergoed </div>
-								<div>7 t/m 20 betaalt u zelf</div>
-								<div>Vanaf 21e behandeling vergoed vanuit de basisverzekering (u betaalt dan wel eigen risico voor de vergoeding)</div>
-							</td>
-							<td colspan="1" rowspan="1">
-								<div>1 t/m 12 vergoed </div>
-								<div>13 t/m 20 betaalt u zelf</div>
-								<div>Vanaf 21e behandeling vergoed uit de basisverzekering (u betaalt dan wel eigen risico voor de vergoeding)</div>
-							</td>
-							<td colspan="2" rowspan="1">
-								<div>1 t/m 20 vergoed  </div>
-								<div>
-									<div>Vanaf 21e behandeling vergoed uit de basisverzekering (u betaalt dan wel eigen risico voor de vergoeding)</div>
-								</div>
-							</td>
-						</tr>
-
-						<tr>
-							<th>
-								<div class="ExternalClass96925C842D5441A0A9FAD9258CFCF15A">
-									<div>Bekkenfysiotherapie in verband met urine-incontinentie, per persoon voor de gehele duur van de verzekering</div>
-								</div>
-							</th>
-							<td colspan="1" rowspan="1">Behandeling 1 t/m 9  (u betaalt wel <span class="tooltip-toggle" title="" data-original-title="">eigen risico</span> voor de vergoeding)</td>
-							<td colspan="1" rowspan="1"><div>6 extra behandelingen </div></td><td colspan="1" rowspan="1">
-								<div>
-									<div>12 extra behandelingen </div>
-								</div>
-							</td>
-							<td colspan="1" rowspan="1">
-								<div>
-									<div>27 extra behandelingen </div>
-								</div>
-							</td>
-							<td colspan="1" rowspan="1">
-								<div>Alle overige behandelingen</div>
-							</td>
-						</tr>
-
-						<tr>
-							<th>
-								<div class="ExternalClassC3CD9F1C264B40A58D4A33A13BF37CDB">
-									<div>Extra behandelingen</div>
+								<div class="ExternalClassAA50246FBCCD4F919B3D54CF307F04D3">
+									<div>A. Consulten (C-codes) en second opinion, mondhygiëne (M-codes), vullingen (V-codes), trekken van tanden en kiezen (H-codes) door tandarts, kaakchirurg, mondhygiënist en/of tandprotheticus</div>
 								</div>
 							</th>
 							<td colspan="1" rowspan="1">&nbsp;</td>
-							<td colspan="4" rowspan="1">
-								<div>
-									<div>Alleen vergoeding vanuit bepaalde collectiviteiten</div>
+							<td colspan="4" rowspan="1"><div>100%</div></td>
+						</tr>
+						<tr>
+							<th>
+								<div class="ExternalClass9453054694234F86A9AC032F2928A106">
+									<div>B. Overige tandheelkundige behandelingen, zoals kronen, bruggen, implantaten en inlays (R-codes)<br></div>
 								</div>
-							</td>
+							</th>
+							<td>&nbsp;</td>
+							<td colspan="3" rowspan="1"><div><div>75%</div></div></td>
+							<td><div>100%</div></td>
 						</tr>
 					</tbody>
-				</table> -->
-
+				</table>
 
 			</div>
 		</div>
@@ -213,36 +108,10 @@
 			<p>Responsive table reflow</p>
 		</div>
 	</div>
-	<!-- build:js scripts/vendor.js -->
-	<!-- bower:js -->
+
 	<script src="bower_components/jquery/dist/jquery.js"></script>
-	<!-- endbower -->
-	<!-- endbuild -->
-	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-	<script>
-	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-	function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-	e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-	e.src='//www.google-analytics.com/analytics.js';
-	r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-	ga('create','UA-XXXXX-X');ga('send','pageview');
-	</script>
-	<!-- build:js scripts/plugins.js -->
-	<script src="bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/affix.js"></script>
-	<script src="bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/alert.js"></script>
-	<script src="bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-	<script src="bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-	<script src="bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/modal.js"></script>
-	<script src="bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/transition.js"></script>
-	<script src="bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/button.js"></script>
-	<script src="bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/popover.js"></script>
-	<script src="bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-	<script src="bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-	<script src="bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-	<script src="bower_components/twbs-bootstrap-sass/vendor/assets/javascripts/bootstrap/tab.js"></script>
-	<!-- endbuild -->
-	<!-- build:js({app,.tmp}) scripts/main.js -->
+	<script src="scripts/jquery.wtable.js"></script>
 	<script src="scripts/main.js"></script>
-	<!-- endbuild -->
+
 </body>
 </html>

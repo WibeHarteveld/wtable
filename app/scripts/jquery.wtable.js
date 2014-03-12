@@ -82,12 +82,13 @@
 
 		// Set each tbody > td content
 		injectDiv: function ( tbodyTrs, nodeContent ) {
-			var i, j, k, iLen, jLen, kLen,
+			var i, j, k, l, iLen, jLen, kLen, lLen,
 			trChild,
 			thNum,
 			colNum,
 			thInjected,
-			thInjectedContent;
+			thInjectedContent,
+			nodeExtraContent;
 
 			// Set optional nodeContent
 			nodeContent = (typeof nodeContent === 'undefined') ? false : nodeContent;
@@ -97,7 +98,20 @@
 
 				// When tr has .extra class, use those th's instead of thead > th's
 				if ( $(tbodyTrs[i]).hasClass('extra') ) {
-					nodeContent = this.getCellContent( $(tbodyTrs[i]).children(0) );
+					nodeExtraContent = this.getCellContent( $(tbodyTrs[i]).children(0) );
+
+					// If a value of nodeExtraContent is empty (except the first),
+					// inherit the previous th value of the same column position.
+					for (l = 1, lLen = nodeExtraContent.length; l < lLen; l++) {
+
+						// If empty inherit previous th value
+						if ( nodeExtraContent[l] === '' ) {
+							nodeExtraContent[l] = nodeContent[l];
+						}
+
+					}
+
+					nodeContent = nodeExtraContent;
 				}
 
 				// Reset thNum
@@ -150,7 +164,6 @@
 							trChild.removeChild( thInjected[0] );
 						}
 					} else {
-						//
 						thNum += 1;
 					}
 				}
